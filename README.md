@@ -1,2 +1,2 @@
-# -M-todo-de-Newton-BFGS
+Newton-BFGS
 Trabalho de Otimização
