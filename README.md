@@ -2,7 +2,7 @@
 
 # Introdução
 
-Neste trabalho foi implementado o método **BFGS (Broyden–Fletcher–Goldfarb–Shanno)** para a resolução de problemas de otimização não linear sem restrições.
+Neste trabalho foi implementado o método **BFGS (Broyden-Fletcher-Goldfarb-Shanno)** para a resolução de problemas de otimização não linear sem restrições.
 
 O método BFGS pertence à classe dos métodos **Quasi-Newton**, cujo principal objetivo é aproximar a matriz Hessiana da função objetivo sem necessidade de calcular explicitamente segundas derivadas. Desta forma, obtém-se um método significativamente mais eficiente do que o método de Newton clássico, especialmente em problemas de maior dimensão.
 
