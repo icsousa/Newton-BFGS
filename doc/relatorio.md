@@ -31,7 +31,7 @@
 
 # Introdução
 
-Neste trabalho foi implementado o método **BFGS (Broyden–Fletcher–Goldfarb–Shanno)** para a resolução de problemas de otimização não linear sem restrições.
+Neste trabalho foi implementado o método **BFGS (Broyden-Fletcher-Goldfarb-Shanno)** para a resolução de problemas de otimização não linear sem restrições.
 
 O método BFGS pertence à classe dos métodos **Quasi-Newton**, cujo principal objetivo é aproximar a matriz Hessiana da função objetivo sem necessidade de calcular explicitamente segundas derivadas. Desta forma, obtém-se um método significativamente mais eficiente do que o método de Newton clássico, especialmente em problemas de maior dimensão.
 
@@ -281,7 +281,7 @@ $$F_2(w) = 4w_1^2 + 2w_2^2 + 4w_1w_2 - 3w_1$$
 | 7 | 0.7500 | -0.7500 | -1.1250 | $< 10^{-6}$ | 1.0000 |
 
 ### Análise:
-Convergência **idêntica** entre os dois métodos — ambos em 7 iterações com o mesmo valor ótimo. A função é suave e bem condicionada, permitindo que o BFGS construa rapidamente uma boa aproximação da Hessiana. O passo unitário é aceite a partir da iteração 1, confirmando que a direção de procura é de alta qualidade desde cedo.
+Convergência **idêntica** entre os dois métodos - ambos em 7 iterações com o mesmo valor ótimo. A função é suave e bem condicionada, permitindo que o BFGS construa rapidamente uma boa aproximação da Hessiana. O passo unitário é aceite a partir da iteração 1, confirmando que a direção de procura é de alta qualidade desde cedo.
 
 ---
 
@@ -308,7 +308,7 @@ $$F_3(w) = w_1^2 + 2w_2^2 - 2w_1w_2 - 2w_2$$
 | 2 | 1.0000 | 1.0000 | -1.0000 | 0.00 | 1.0000 |
 
 ### Análise:
-Convergência muito rápida — o BFGS converge em apenas **2 iterações**, contra 3 do `fminunc`. Na iteração 2, o gradiente é exatamente zero ($\|\nabla F\|_\infty = 0$), indicando que o método chegou ao mínimo exato. Trata-se de uma função simples e bem comportada.
+Convergência muito rápida - o BFGS converge em apenas **2 iterações**, contra 3 do `fminunc`. Na iteração 2, o gradiente é exatamente zero ($\|\nabla F\|_\infty = 0$), indicando que o método chegou ao mínimo exato. Trata-se de uma função simples e bem comportada.
 
 ---
 
@@ -397,7 +397,7 @@ $$F_6(w) = \frac{1}{2}(5w_1^2 + 7w_2^2 + 9w_3^2 + 4w_1w_2 + 2w_1w_3 + 6w_2w_3) +
 | 9 | -3.808 | 1.502 | -0.967 | -36.230 | $< 10^{-6}$ |
 
 ### Análise:
-Resultados muito próximos — apenas 1 iteração de diferença (9 vs 8). Ambos encontram exatamente o mesmo mínimo local. A função tem estrutura não quadrática em 3D mas é bem comportada, permitindo convergência rápida. O BFGS próprio apresenta uma iteração extra que se deve à menor qualidade inicial de $H_0 = I$ comparada com o escalonamento adaptativo do `fminunc`.
+Resultados muito próximos - apenas 1 iteração de diferença (9 vs 8). Ambos encontram exatamente o mesmo mínimo local. A função tem estrutura não quadrática em 3D mas é bem comportada, permitindo convergência rápida. O BFGS próprio apresenta uma iteração extra que se deve à menor qualidade inicial de $H_0 = I$ comparada com o escalonamento adaptativo do `fminunc`.
 
 ---
 
@@ -437,21 +437,21 @@ $$F_8(w) = (w_1 - 1)^2 + (w_2 - 1)^2 + \alpha \left(w_1^2 + w_2^2 - 0.25\right)^
 
 O termo $\alpha(w_1^2 + w_2^2 - 0.25)^2$ é uma **função de penalidade** que penaliza soluções afastadas da circunferência $w_1^2 + w_2^2 = 0.25$. À medida que $\alpha$ aumenta, o problema torna-se mais difícil (maior condicionamento da Hessiana).
 
-### Resultados — $\alpha = 1$:
+### Resultados - $\alpha = 1$:
 
 | Método | $w^*$ | $F^*$ | Iterações | $\|\nabla F\|_\infty$ inicial |
 |--------|-------|-------|-----------|------------------------------|
 | BFGS próprio | (0.5641, 0.5641) | 0.5293 | 9 | 11.0 |
 | fminunc MATLAB | (0.5641, 0.5641) | 0.5293 | **8** | 11.0 |
 
-### Resultados — $\alpha = 10$:
+### Resultados - $\alpha = 10$:
 
 | Método | $w^*$ | $F^*$ | Iterações | $\|\nabla F\|_\infty$ inicial |
 |--------|-------|-------|-----------|------------------------------|
 | BFGS próprio | (0.4026, 0.4026) | 0.7688 | 12 | 74.0 |
 | fminunc MATLAB | (0.4026, 0.4026) | 0.7688 | **8** | 74.0 |
 
-### Resultados — $\alpha = 100$:
+### Resultados - $\alpha = 100$:
 
 | Método | $w^*$ | $F^*$ | Iterações | $\|\nabla F\|_\infty$ inicial |
 |--------|-------|-------|-----------|------------------------------|
@@ -469,7 +469,7 @@ O termo $\alpha(w_1^2 + w_2^2 - 0.25)^2$ é uma **função de penalidade** que p
 | 20 | 0.3598 | 0.3598 | 0.8277 | 0.003 | 1.0000 |
 | 22 | 0.3598 | 0.3598 | 0.8277 | $< 10^{-6}$ | 1.0000 |
 
-### Análise — Efeito de $\alpha$:
+### Análise - Efeito de $\alpha$:
 
 | $\alpha$ | $w^*$ | $F^*$ | Iter BFGS | Iter fminunc | Razão |
 |---|-------|-------|-----------|--------------|-------|
@@ -520,7 +520,7 @@ $$H_0 \leftarrow \frac{y_0^T s_0}{y_0^T y_0} I$$
 Esta adaptação é particularmente benéfica em problemas com gradientes muito elevados (P8 com $\alpha = 100$, onde $\|\nabla F\|_\infty = 704$).
 
 **Vantagem do BFGS próprio:**
-* O **Damped BFGS Update** implementado é uma estratégia mais robusta do que a simples verificação da condição de curvatura — em vez de descartar a atualização quando $s_k^T y_k \le 0$, modifica $y_k$ para garantir positividade definida.
+* O **Damped BFGS Update** implementado é uma estratégia mais robusta do que a simples verificação da condição de curvatura - em vez de descartar a atualização quando $s_k^T y_k \le 0$, modifica $y_k$ para garantir positividade definida.
 * No problema P1 (Rosenbrock), o BFGS próprio converge em menos iterações (34 vs 36), possivelmente porque o Damped update preservou melhor a informação de curvatura ao longo das iterações.
 
 ## Taxa de Convergência
