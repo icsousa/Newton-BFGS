@@ -1,4 +1,33 @@
-# Método de Newton BFGS (T3)
+<div align="center">
+
+# Universidade do Minho
+## Licenciatura em Ciências da Computação
+
+<br>
+
+### Unidade Curricular de Otimização
+**Ano Letivo 2025/2026**
+
+<br><br>
+
+# T3 - Método de Newton BFGS
+### Relatório de Trabalho Prático
+
+<br><br>
+
+**Grupo 6**
+
+**A101777** - Gustavo Alves de Araújo Gomes  
+**A102935** - Ivo Costa Sousa  
+**A108579** - João Carlos Teixeira Neiva  
+**A102528** - João Pedro Ribeiro Matos  
+**A109069** - Miguel Ângelo Oliveira da Silva  
+**A104244** - Miguel Dinis Páscoa  
+**A102878** - Ricardo Eusébio Cerqueira  
+
+</div>
+
+<div style="page-break-after: always;"></div>
 
 # Introdução
 
